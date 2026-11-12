@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIKITOS MARKET — Маркетплейс</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ФОН -->
+    <div id="particles-js"></div>
+
+    <nav class="navbar">
+        <div class="logo">NIKITOS<span> MARKET</span></div>
+        <ul class="nav-links">
+            <li><a href="#market">Товары</a></li>
+            <li><a href="#add-item">Продать</a></li>
+            <li><a href="#contact">Почта</a></li>
+        </ul>
+        <div class="burger"><i class="fas fa-bars"></i></div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content glass-panel">
+            <h1 class="glitch" data-text="NIKITOS MARKET">NIKITOS MARKET</h1>
+            <p class="subtitle">Покупай и продавай выгодно</p>
+            <div class="hero-buttons">
+                <a href="#market" class="btn btn-primary">Смотреть товары</a>
+                <a href="#add-item" class="btn btn-secondary">Выставить на продажу</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="market" class="section">
+        <h2 class="section-title glass-panel">Все товары</h2>
+        <div class="market-grid" id="market-grid"></div>
+    </section>
+
+    <section id="add-item" class="section dark-section">
+        <h2 class="section-title glass-panel">Выставить товар</h2>
+        <form id="item-form" class="styled-form glass-panel">
+            <input type="text" id="item-name" placeholder="Название товара" required>
+            <input type="number" id="item-price" placeholder="Цена (₽)" required>
+            <textarea id="item-desc" placeholder="Описание" rows="3" required></textarea>
+            
+            <!-- Поля для контактов -->
+            <input type="text" id="item-phone" placeholder="Ваш телефон (для связи)">
+            <input type="text" id="item-vk" placeholder="Ссылка на ВК (необязательно)">
+            <input type="text" id="item-tg" placeholder="Ссылка на Telegram (необязательно)">
+            
+            <div class="file-upload">
+                <label for="item-image" class="file-label"><i class="fas fa-camera"></i> Добавить фото</label>
+                <input type="file" id="item-image" accept="image/*" style="display: none;">
+                <span id="file-name">Файл не выбран</span>
+            </div>
+            <button type="submit" class="btn btn-primary">Опубликовать</button>
+        </form>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="section-title glass-panel">Написать администрации</h2>
+        <form action="https://formspree.io/f/ВАША_ССЫЛКА_СЮДА" method="POST" class="styled-form glass-panel">
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="email" name="email" placeholder="Ваш Email" required>
+            <textarea name="message" placeholder="Сообщение" rows="5" required></textarea>
+            <button type="submit" class="btn btn-secondary">Отправить</button>
+        </form>
+    </section>
+
+    <footer><p>&copy; 2026 NIKITOS MARKET. Все права защищены.</p></footer>
+
+    <!-- Модальное окно чата -->
+    <div id="chat-modal" class="modal hidden">
+        <div class="modal-content glass-panel">
+            <div class="modal-header">
+                <h3 id="chat-title">Чат с продавцом</h3>
+                <button id="close-chat" class="close-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-messages" id="chat-messages"></div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Написать сообщение...">
+                <button id="chat-send" class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
